@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Maker</title>
+    <link rel="stylesheet" href="music-maker.css">
+</head>
+
+<body>
+
+    <div>
+        <button onclick="addTrack()">Add Track</button>
+        <button id="playAll"></button>
+        <button id="pauseAll"></button>
+        <button id="stopAll" onclick="stopAllTracks()"></button>
+    </div>
+    
+
+<div class="draggable" draggable="true" data-instrument="Bass" ondragstart="handleDragStart(event)">Bass</div>
+<div class="draggable" draggable="true" data-instrument="Guitar" ondragstart="handleDragStart(event)">Guitar</div>
+<div class="draggable" draggable="true" data-instrument="Drums" ondragstart="handleDragStart(event)">Drums</div>
+<div class="draggable" draggable="true" data-instrument="Violin" ondragstart="handleDragStart(event)">Violins</div>
+<div id="external-audios">
+    <!-- 这里将存放从URL添加的音频 -->
+</div>
+
+<button id="downloadMix">Download Mixed Audio</button>
+
+<div id="tracks"></div>
+
+<div id="urlInputDiv">
+    <input type="text" id="audioUrlInput" placeholder="Enter audio URL">
+    <button onclick="addAudioFromUrl()">Add Audio from URL</button>
+</div>
+
+
+<script src="music-maker.js"></script>
+
+</body>
+</html>

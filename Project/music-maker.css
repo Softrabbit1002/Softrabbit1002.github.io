@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e3dcef;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%237c42d8' fill-opacity='0.48' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    background-color: #ccc;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 110%; /* 或其他你想要的宽度 */
+}
+
+.track audio {
+    display: block;
+    margin-bottom: 10px; /* 你可以根据需要调整这个值 */
+}
+
+
+button[onclick='addTrack()'] {
+    margin-bottom: 25px; /* 或者你需要的任何距离 */
+}
+
+button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #444; 
+    color: #fff;           
+}
+
+button:hover {
+    background-color: #333; 
+}
+
+.play-button, .pause-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.play-button:before {
+    content: '▶'; 
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000; 
+    background-color: #ccc; 
+    border-radius: 50%; 
+    padding: 5px;
+}
+
+.pause-button:before, .pause-button:after {
+    content: ''; 
+    background-color: #000; 
+    width: 8px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pause-button:before {
+    left: 17%; 
+}
+
+.pause-button:after {
+    right: 17%; 
+}
+
+select {
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    width: 130px; 
+    appearance: none;
+    position: relative;
+}
+
+select::after {
+    content: '▼'; 
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+select option {
+    color: #000;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+label {
+    margin-right: 5px;
+}
+
+input[type="file"] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.track:hover {
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.draggable {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+
+
+#tracks {
+    margin-top: 30px; /* 或者你需要的任何距离 */
+}
+
+#playAll, #pauseAll, #stopAll {
+    font-size: 0; /* 去掉按钮上的文字 */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 500px; /* 增加与 "Add Track" 按钮的距离 */
+    margin-right: -500px;
+    height: 40px; /* 设置按钮高度 */
+}
+
+#playAll:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 40px solid #000;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* 垂直居中 */
+}
+
+#pauseAll:before, #pauseAll:after {
+    content: '';
+    display: inline-block;
+    background-color: #000;
+    width: 10px;
+    height: 40px;
+    margin-right: 5px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* 垂直居中 */
+}
+
+/* 更新的停止所有音轨按钮的样式 */
+#stopAll {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px; /* 设置按钮宽度 */
+    height: 40px; /* 设置按钮高度 */
+    position: relative;
+    margin-left: 520px; /* 设置左边距 */
+}
+
+#stopAll:before {
+    content: ''; 
+    background-color: #000; 
+    width: 40px; /* 更新宽度 */
+    height: 40px; /* 更新高度 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -114%); /* 居中 */
+}
+
+#urlInputDiv {
+    margin-bottom: 20px;
+}
+
+#audioUrlInput {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#external-audios {
+    margin-top: 30px; /* 或者你需要的任何距离 */
+}
+
+#downloadMix {
+    position: fixed; /* 使用固定定位 */
+    right: 20px; /* 从右边界的距离 */
+    top: 20px; /* 从顶部边界的距离 */
+    z-index: 1000; /* 确保按钮在其他元素之上 */
+}
+
+.volume-slider {
+    width: 100px; /* 你可以根据需要调整宽度 */
+    margin: 0 10px; /* 添加一些外边距 */
+}
+

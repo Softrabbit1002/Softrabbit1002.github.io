@@ -1,0 +1,19 @@
+Drag’n’drop new instruments to the tracks (with mouse or touch screen)4
+Adjustable volume per track2
+Adjustable volume per instrument item1
+
+Able to download the final song3 ×
+
+Istrument’s length is visualized in the track4
+Available instruments are categorized (basses, guitars, drums…)2
+One can change the category of an instrument1
+Users can add as many tracks as they sees fit1
+Some tracks are looping tracks while some can be set to run only once1
+Use the web audio API and let users to record songs through microphone3
+User can delete tracks and instrument items3
+
+https://www.bensound.com/bensound-music/bensound-jazzyfrenchy.mp3
+https://www.bensound.com/bensound-music/bensound-acousticbreeze.mp3
+https://www.bensound.com/bensound-music/bensound-creativeminds.mp3
+https://www.bensound.com/bensound-music/bensound-ukulele.mp3
+https://www.bensound.com/bensound-music/bensound-sunny.mp3
