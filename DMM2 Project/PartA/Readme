@@ -1,0 +1,9 @@
+# Here is a readme file for the DMM2 Project
+# Important information:
+# datasetID:
+# 191: Hydropower
+# 245: Wind power
+# 247: Solar power
+# Please just use these three id to test the program 
+
+# The range in page size is 1-20000
